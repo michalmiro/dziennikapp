@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/addAnnouncment" method="post" th:object="${newAnnouncment}">
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Typ ogloszenia</label>
+        <select class="form-control" id="exampleFormControlSelect1" th:field="*{type}">
+            <option th:value="${'KUPIE'}">KUPIE</option>
+            <option th:value="${'SPRZEDAM'}">SPRZEDAM</option>
+            <option th:value="${'WYMIENIE'}">WYMIENIE</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="subject">Tematyka ogloszenia</label>
+        <input type="text" class="form-control" id="subject" placeholder="np.MOTORYZACJA" th:field="*{subject}">
+    </div>
+    <div class="form-group">
+        <label for="contents">Tresc</label>
+        <input type="text" class="form-control" id="contents" placeholder="tresc twojego ogloszenia" th:field="*{contents}">
+    </div>
+    <input  class="btn btn-primary mb-2" type="submit" value="Dodaj">
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:margin="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2 style="color: lightskyblue; background-color: bisque;width: 500px;margin: auto">Witam admina</h2>
+<table class="table" style="width: 500px; margin:auto">
+    <thead>
+    <tr>
+        <th>Typ</th>
+        <th>Temat</th>
+        <th>Tresc</th>
+    <tbody>
+    <tr th:each="announcment:${announcments}">
+        <td th:text="${announcment.getType()}"></td>
+        <td th:text="${announcment.getSubject()}"></td>
+        <td th:text="${announcment.getContents()}"></td>
+    </tr>
+
+    </tbody>
+    </thead>
+</table>
+<form action="http://google.com">
+    <input class="btn btn-primary mb-2" type="submit" value="Usun"  />
+</form>
+</body>
